@@ -18,6 +18,12 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Manrope', sans-serif;
     background: #faf8f4;
@@ -45,7 +51,6 @@ input,
 textarea,
 select {
     font-family: inherit;
-    font-size: 16px;
 }
 
 /*=====================================================
@@ -308,7 +313,7 @@ HERO
 
     height: 100vh;
 
-    background: url("../images/hero.jpg") center center/cover;
+    background: url("../images/hero.jpeg") center center/cover;
 
     display: flex;
 
@@ -392,35 +397,25 @@ FEATURED STORY
 =====================================================*/
 
 .featured-grid {
-
     display: grid;
-
     grid-template-columns: 1.1fr .9fr;
-
-    gap: 70px;
-
+    gap: 50px;
     align-items: center;
-
+    overflow: hidden;
 }
 
 .featured-image {
-
+    width: 100%;
     overflow: hidden;
-
     border-radius: 28px;
-
     box-shadow: var(--shadow);
-
 }
 
 .featured-image img {
-
-    height: 720px;
-
+    width: 100%;
+    height: 700px;
     object-fit: cover;
-
-    transition: .5s;
-
+    display: block;
 }
 
 .featured-image:hover img {
@@ -1126,6 +1121,7 @@ BOOKING
     transition: .3s;
 
     background: #fff;
+    box-sizing: border-box;
 
 }
 
@@ -1493,6 +1489,31 @@ RESPONSIVE
 
         text-align: center;
 
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .featured-image {
+        width: 100%;
+    }
+
+    .featured-image img {
+        height: 380px;
+    }
+
+    .featured-content {
+        width: 100%;
+    }
+
+    .featured-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .featured-content p {
+        font-size: 1rem;
     }
 
 }
